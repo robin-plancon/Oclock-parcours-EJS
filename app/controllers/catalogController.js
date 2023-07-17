@@ -31,7 +31,9 @@ const catalogController = {
 
     product: async (req, res) => {
         // todo, récupérer le produit demandé en base de données.
-        res.render('product');
+        const id = parseInt(req.params.id, 10);
+        const product = await Product.findByPk(id);
+        res.render('product', { product });
     },
 
     cart: (req, res) => {
