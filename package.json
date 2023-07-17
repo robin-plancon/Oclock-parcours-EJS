@@ -4,7 +4,7 @@
     "description": "Parcours Saison 5",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon"
+        "dev": "nodemon -L"
     },
     "repository": {
         "type": "git",
