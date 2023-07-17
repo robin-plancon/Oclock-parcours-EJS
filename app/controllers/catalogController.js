@@ -24,7 +24,9 @@ const catalogController = {
 
     category: async (req, res) => {
         // todo, il faut récupérer la catégorie en fonction de l'id présent dans l'url et la passer à la vue
-        res.render('category');
+        const id = parseInt(req.params.id, 10);
+        const category = await Category.findByPk(id, { include: ['products'], order: [['products', 'price', 'ASC']]});
+        res.render('category', { category });
     },
 
     product: async (req, res) => {
