@@ -12,11 +12,11 @@ const userController = {
             const { firstname, lastname, email, password, passwordConfirm } = req.body;
 
             // verifier si tous les champs sont remplis
-            // if (!firstname || !lastname || !email || !password || !passwordConfirm) {
-            //     return res.render('register', {
-            //         error: 'Veuillez remplir tous les champs',
-            //     });
-            // }
+            if (!firstname || !lastname || !email || !password || !passwordConfirm) {
+                return res.render('register', {
+                    error: 'Veuillez remplir tous les champs',
+                });
+            }
 
             // !! votre code à partir d'ici
             // verifier l'email avec le package npm email-validator
