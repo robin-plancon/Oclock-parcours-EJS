@@ -18,4 +18,14 @@ User.belongsTo(Role, {
     as: 'role',
 });
 
+Category.hasMany(Product, {
+    foreignKey: 'category_id',
+    as: 'products',
+});
+
+Product.belongsTo(Category, {
+    foreignKey: 'category_id',
+    as: 'category',
+});
+
 module.exports = { User, Category, Product, Role };

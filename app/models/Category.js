@@ -8,4 +8,12 @@ class Category extends Sequelize.Model {}
  * tableName: 'categories',
  */
 
+Category.init({
+  name: DataTypes.STRING,
+  allowNull: false,
+}, {
+  sequelize,
+  tableName: 'categories',
+});
+
 module.exports = Category;
