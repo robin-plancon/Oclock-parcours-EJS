@@ -9,8 +9,10 @@ class Category extends Sequelize.Model {}
  */
 
 Category.init({
-  name: DataTypes.STRING,
-  allowNull: false,
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 }, {
   sequelize,
   tableName: 'categories',
