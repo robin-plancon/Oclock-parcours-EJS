@@ -49,8 +49,6 @@ const sessionController = {
             // On enlève le mot de passe de la session.
             delete req.session.user.password;
 
-            console.log(req.session.user);
-
             // !! Ne pas modifier cette ligne
             res.redirect('/');
         } catch (e) {
@@ -64,6 +62,7 @@ const sessionController = {
         // On supprime l'utilisateur de la session
         delete req.session.user;
         // On redirige vers la page d'accueil
+        console.log(req.session);
         res.redirect('/');
     },
 };
